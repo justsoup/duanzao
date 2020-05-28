@@ -88,8 +88,10 @@
         // console.log(grade,index,meltingMax,meltingPoint);
         temperature=temperature+parseFloat(data5.value)*100+parseFloat(data6.value)*100+parseFloat(data7.value)*60+parseFloat(data8.value)*50;
         // console.log(temperature);
-        if(temperature<parseFloat(meltingPoint+100)){
-            resultBox.innerText='失败了，需要再多加点燃料';
+        if(temperature<parseFloat(meltingPoint)){
+            let sortValue=parseFloat(meltingPoint)-parseFloat(temperature);
+            resultBox.innerText='失败了，需要再多加点燃料'+'\n';
+            resultBox.innerText+='还缺少'+sortValue+'°';
             return;
         }
 
