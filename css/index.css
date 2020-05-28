@@ -1,0 +1,105 @@
+html{
+    font-size: 100px;
+}
+
+html,body{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+
+.mainBox{
+    position: relative;
+    max-width: 640px;
+    background: rgba(0,0,0,.8);
+    color:#999999;
+    height: 100%;
+    margin: 0 auto;
+    border:1px solid black;
+}
+
+select{
+
+    display: block;
+    width: 2rem;
+    height: .4rem;
+    margin: 0 auto .15rem auto;
+}
+
+label{
+    position: relative;
+    display: block;
+    width: 2rem;
+    height: .4rem;
+    margin: .05rem auto 0 auto;
+    font-weight: bold;
+    font-size: .15rem;
+}
+
+input{
+    position: absolute;
+    width: .6rem;
+    right:0;
+    padding: .05rem;
+    text-align: center;
+}
+
+
+
+label:nth-of-type(1){
+    color:#e01d20;
+}
+
+label:nth-of-type(5){
+    color:#FFF;
+}
+
+label:nth-of-type(6){
+    color:#ffff00;
+}
+
+label:nth-of-type(7){
+    color:darkorchid;
+}
+
+label:nth-of-type(8){
+    color:darkmagenta;
+}
+
+label:nth-of-type(10){
+    color:#A2E45C;
+}
+
+.btn{
+    display: block;
+    width: .8rem;
+    margin: 0 auto;
+    font-size: .4rem;
+    color:yellow;
+}
+.btn:hover{
+    color: gold;
+}
+
+
+
+.result{
+    display: block;
+    text-align: center;
+    font-size: .3rem;
+}
+
+.imgBox{
+    display: none;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+    height: 5rem;
+}
+
+.imgBox img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
