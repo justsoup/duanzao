@@ -52,22 +52,7 @@
             }
             xhr.send(null);
         });
-    }
-
-
-
-    // 镔铁	1100	250
-    // 精铜	1200	250
-    // 青金	1200	250
-    // 云钢	1300	250
-    // 铁精	1700	350
-    // 铜精	1800	350
-    // 百炼寒铁	1800	350
-    // 磁母	1900	350
-    // 青云金铁	2200	500
-    // 赤日铁	2300	500
-    // 墨金	2300	500
-    // 寒铜金精	2400	500
+    };
 
     function computedMeltingValue(temperature=0,meltingpoint=0){
         return temperature*250/meltingpoint;
@@ -116,10 +101,11 @@
         forgeGrade=Math.floor(grade/50+meltingValue*3/20+parseFloat(data9.value)*0.5);
         initialAttack=forgeGrade*1.2+parseFloat(data1.value);
 
-        console.log(forgeGrade)
+        // console.log(forgeGrade)
 
         resultBox.innerText='初始伤害为 '+initialAttack+'(只取整)'+'\n';
         resultBox.innerText+='锻造结果等级 '+forgeGrade+'\n';
+        resultBox.innerText+='资料来源：放置江湖攻略组 '+'\n';
         imgBox.style.display='block';
 
 
