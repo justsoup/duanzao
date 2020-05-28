@@ -105,9 +105,13 @@
 
         // console.log(forgeGrade)
 
+        initialAttack=Math.floor(initialAttack*100)/100;
         resultBox.innerText='初始伤害为 '+initialAttack+'(只取整)'+'\n';
         resultBox.innerText+='锻造结果等级 '+forgeGrade+'\n';
-        resultBox.innerText+='资料来源：放置江湖攻略组 '+'\n';
+        if(selectBox.value==0){
+            console.log(selectBox.value);
+            resultBox.innerText+='资料来源：放置江湖攻略组 '+'\n';
+        }
         imgBox.style.display='block';
 
 
@@ -137,4 +141,8 @@
 
 
 
+
+
 }()
+
+
