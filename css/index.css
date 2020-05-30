@@ -293,3 +293,11 @@ audio{
     }
 }
 
+.printBox{
+    overflow: auto;
+    border:1px solid rgba(255, 64, 0, 0.81);
+    font-size: .2rem;
+    text-align: center;
+    height: 3rem;
+    color: #3e5f9b;
+}
