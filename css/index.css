@@ -9,7 +9,8 @@ html,body{
 }
 
 
-.mainBox{
+.mainBox1,.mainBox2{
+    display: none;
     background: url('../backtop.png') no-repeat;
     background-size: 100% 100%;
     position: relative;
@@ -29,15 +30,53 @@ select{
     margin: 0 auto .15rem auto;
 }
 
+.hiddenBox{
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top:1.2rem;
+    right:.8rem;
+    width: .6rem;
+    height: .6rem;
+    border-radius: .3rem;
+
+}
+
+.hiddenBox div img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: .3rem;
+    -webkit-transition: all 0.8s ease-in-out 0s;
+    transition: all 0.8s ease-in-out 0s;
+    animation: imgRotate 3s infinite;
+    animation-iteration-count:1;
+}
+
+
+@keyframes imgRotate{
+    from{
+        -webkit-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(.1);
+    }
+    to{
+        -webkit-transform: rotate(360deg) scale(1.5);
+        transform: rotate(360deg) scale(1.5);
+    }
+}
+
+
+
 label{
     position: relative;
     display: block;
     width: 2rem;
-    height: .5rem;
+    height: .4rem;
     margin: .05rem auto 0 auto;
     font-weight: bold;
     font-size: .15rem;
 }
+
 
 input{
     position: absolute;
@@ -49,28 +88,28 @@ input{
 
 
 
-label:nth-of-type(1){
+.mainBox1 label:nth-of-type(1){
     color:#e01d20;
 }
 
-label:nth-of-type(5){
-    color:#FFF;
+.mainBox1 label:nth-of-type(5){
+    color: rgba(255, 255, 255, 0.81);
 }
 
-label:nth-of-type(6){
-    color:#ffff00;
+.mainBox1 label:nth-of-type(6){
+    color: rgba(255, 208, 0, 0.87);
 }
 
-label:nth-of-type(7){
+.mainBox1 label:nth-of-type(7){
     color:darkorchid;
 }
 
-label:nth-of-type(8){
+.mainBox1 label:nth-of-type(8){
     color:darkmagenta;
 }
 
-label:nth-of-type(10){
-    color:#A2E45C;
+.mainBox1 label:nth-of-type(10){
+    color: #515c40;
 }
 
 .btn{
@@ -78,10 +117,10 @@ label:nth-of-type(10){
     width: .8rem;
     margin: 0 auto;
     font-size: .4rem;
-    color:yellow;
+    color: rgba(255, 187, 0, 0.89);
 }
 .btn:hover{
-    color: gold;
+    color: #ff5500;
 }
 
 
@@ -90,6 +129,7 @@ label:nth-of-type(10){
     display: block;
     text-align: center;
     font-size: .3rem;
+    color: #008cff;
 }
 
 .imgBox{
@@ -107,3 +147,149 @@ label:nth-of-type(10){
     width: 100%;
     height: 100%;
 }
+
+
+
+
+
+.mainBox2 label{
+    width: 3rem;
+}
+
+.mainBox2 label:nth-of-type(6) input,.mainBox2 label:nth-of-type(7) input{
+    width: 1.2rem;
+
+}
+
+
+.mainBox2 label:nth-of-type(1){
+    color: rgba(186, 37, 132, 0.95);
+}
+.mainBox2 label:nth-of-type(2){
+    color: rgba(58, 58, 160, 0.95);
+}
+.mainBox2 label:nth-of-type(3){
+    color: rgba(255, 0, 34, 0.95);
+}
+.mainBox2 label:nth-of-type(4){
+    color: rgba(57, 46, 63, 0.94);
+}
+.mainBox2 label:nth-of-type(5){
+    color: rgba(48, 96, 102, 0.94);
+}
+
+
+.cuiBtn{
+    background: #634b4b;
+    width: .8rem;
+    height: .4rem;
+    margin: 0 auto;
+    border-radius: .2rem;
+
+}
+
+.cuiBtn a{
+    color: #6262d3;
+    display: block;
+    width: .4rem;
+    font-size: .2rem;
+    margin: 0 auto;
+    line-height: .4rem;
+}
+
+.cuiBtn a:active{
+    color: rgba(33, 33, 75, 0.88);
+}
+
+.materialContainer{
+    /*background: yellow;*/
+    width: 5rem;
+    height: .4rem;
+    border-radius: .2rem;
+    margin: .5rem auto 0 auto;
+}
+
+.materialBox{
+    background: #634b4b;
+    width: 1.2rem;
+    height: .4rem;
+    border-radius: .2rem;
+    float:left;
+    margin-left: .38rem;
+    cursor: pointer;
+}
+
+.materialBox a{
+    color: #6262d3;
+    display: block;
+    width: .6rem;
+    font-size: .2rem;
+    margin: 0 auto;
+    line-height: .4rem;
+    text-align: center;
+}
+
+.multipleContainer{
+    position: relative;
+    /*background: red;*/
+    width: 2rem;
+    height: .8rem;
+    border-radius: .2rem;
+    margin: .5rem auto 0 auto;
+}
+
+.multipleContainer input{
+    width: .6rem;
+    left:.2rem;
+    top:.2rem;
+    height: .4rem;
+    font-size: .2rem;
+    border-radius: .1rem;
+    box-sizing: border-box;
+    border: none;
+    background: #FFF;
+}
+
+.multipleContainer a{
+    background: #c8e3c8;
+    position: absolute;
+    display: block;
+    width: .8rem;
+    font-size: .2rem;
+    line-height: .4rem;
+    color:green;
+    top:.18rem;
+    right:.2rem;
+    border:1px solid black;
+    border-radius: .1rem;
+}
+
+audio{
+    display: none;
+}
+
+.playBtn{
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    top: .2rem;
+    right: .4rem;
+    margin-top:.3rem;
+    background: url('../music.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.active{
+    animation: iconRotate 1s linear infinite both;
+}
+
+
+@keyframes iconRotate {
+    form{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
