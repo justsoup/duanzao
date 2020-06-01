@@ -1,1 +1,203 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><meta http-equiv="X-UA-Compatible"content="ie=edge"><title>神兵[清台乐歌]v3.3</title><link rel="stylesheet"href="css/reset.min.css"/><link rel="stylesheet"href="css/index.css"/><script>~function anonymous(window){let computedRem=function(){let winW=document.documentElement.clientWidth,desW=640;if(winW>=desW){document.documentElement.style.fontSize='100px';return}document.documentElement.style.fontSize=winW/desW*100+'px'};computedRem();window.addEventListener('resize',computedRem)}(window)</script></head><body><div class="mainBox1"><select name=""id="selectBox"><option value="0">镔铁</option><option value="1">精铜</option><option value="2">青金</option><option value="3">云钢</option><option value="4">磁母</option><option value="5">铁精</option><option value="6">铜精</option><option value="7">百炼寒铁</option><option value="8">青云金铁</option><option value="9"selected>赤日铁</option><option value="10">墨金</option><option value="11">寒铜金精</option></select><select id="select2Box"><option value="1">长剑</option><option value="2">短剑</option><option value="3">软剑</option><option value="4">重剑</option><option value="5"selected>刺剑</option><option value="6">长刀</option><option value="7">大环刀</option><option value="8">短刀</option><option value="9">弯刀</option><option value="10">双刃斧</option><option value="11">长棍</option><option value="12">狼牙棒</option><option value="13">三节棍</option><option value="14">长枪</option><option value="15">战戟</option><option value="16">长鞭</option><option value="17">软鞭</option><option value="18">九节鞭</option><option value="19">杆子鞭</option><option value="20">链枷</option><option value="21">双环</option><option value="22">对剑</option><option value="23">双钩</option></select><div class="hiddenBox"><div><img src="icon.png"alt=""/></div></div><label>基础伤害:<input type="number"step="1"min="0"id='data1'value="20"disabled></label><label>硬度:<input type="number"step="1"min="0"id='data2'value="33"disabled></label><label>韧度:<input type="number"step="1"min="0"id='data3'value="62"disabled></label><label>重量:<input type="number"step="1"min="0"id='data4'value="12"disabled></label><label>古木(上限5):<input type="number"step="1"min="0"max="5"id='data5'value="5"></label><label>云香(上限4):<input type="number"step="1"min="0"max="4"id='data6'value="4"></label><label>无烟(上限11):<input type="number"step="1"min="0"max="11"id='data7'value="11"></label><label>融铁(上限49):<input type="number"step="1"min="0"max='60'id='data8'value="0"></label><label>遁地符(上限10):<input type="number"step="1"min="0"max='10'id='data9'value="10"></label><label>锻造等级：<input type="number"id='grade'value='400'max="1000"min="0"></label><div><a href="javascript:;"id='btn'class="btn">锻造</a></div><div id="result"class="result"></div><div class="imgBox"id="imgBox"><img src="duanda.png"alt=""></div></div><div class="mainBox2"><label>当前伤害(最高461)<input type="number"id="data00"step="1"disabled value="0"><span></span></label><label>当前重量<input type="number"id="data01"step="1"disabled value="0"></label><label>当前硬度<input type="number"id="data02"step="1"disabled value="0"></label><label>当前韧度<input type="number"id="data03"step="1"disabled value="0"></label><label>淬炼次数(上限300)<input type="number"id="data04"step="1"min="0"value="0"disabled></label><label>硬度增幅<input type="range"id="data05"max="15"min="1"value="1"step="1"><span id="show1">1</span></label><label>韧度增幅<input type="range"id="data06"max="15"min="1"value="1"step="1"><span id="show2">1</span></label><div class="cuiBtn"><a href="javascript:;"id="btn2">锁定</a></div><div class="materialContainer"><div class="materialBox"><a href="javascript:;"id="material1">loading</a></div><div class="materialBox"><a href="javascript:;"id="material2">loading</a></div><div class="materialBox"><a href="javascript:;"id="material3">loading</a></div></div><!--重铸--><div class="recastContainer"><a href="javascript:;"id="btn4">重铸</a></div><div class="recastBox"><a href="javascript:;">长刀</a><a href="javascript:;">长刀</a><a href="javascript:;">长刀</a><a href="javascript:;">长刀</a></div><div class="multipleContainer"><input type="number"value="1"id="input3"disabled><a href="javascript:;"id="btn3">锁定解除</a></div><audio preload="none"loop id="myMusic"><source src="qxpsz.mp3"/>抱歉，你的浏览器暂不支持此音频格式</audio><a href="javascript:;"class="playBtn"></a><a href="javascript:;"class="dataBtn">数值</a><a href="javascript:;"class="backBtn">回退</a><a href="javascript:;"class="resetBtn">重置</a><div id="printBox"class="printBox"></div></div><script src="js/computed.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>神兵[清台乐歌] v3.3</title>
+
+	<link rel="stylesheet" href="css/reset.min.css" />
+	<link rel="stylesheet" href="css/index.css" />
+
+	<script>
+		~function anonymous(window){
+			let computedRem=function(){
+				let winW=document.documentElement.clientWidth,
+						desW=640;
+				if(winW>=desW){
+					document.documentElement.style.fontSize='100px';
+					return;
+				}
+				document.documentElement.style.fontSize=winW/desW*100+'px';
+			};
+			computedRem();
+			window.addEventListener('resize',computedRem);
+
+		}(window)
+	</script>
+</head>
+<body>
+	<div class="mainBox1">
+		<select name="" id="selectBox">
+			<option value="0">镔铁</option>
+			<option value="1">精铜</option>
+			<option value="2">青金</option>
+			<option value="3">云钢</option>
+			<option value="4">磁母</option>
+			<option value="5">铁精</option>
+			<option value="6">铜精</option>
+			<option value="7">百炼寒铁</option>
+			<option value="8">青云金铁</option>
+			<option value="9" selected>赤日铁</option>
+			<option value="10">墨金</option>
+			<option value="11">寒铜金精</option>
+		</select>
+
+
+		<select id="select2Box">
+			<option value="1">长剑</option>
+			<option value="2">短剑</option>
+			<option value="3">软剑</option>
+			<option value="4">重剑</option>
+			<option value="5" selected>刺剑</option>
+			<option value="6">长刀</option>
+			<option value="7">大环刀</option>
+			<option value="8">短刀</option>
+			<option value="9">弯刀</option>
+			<option value="10">双刃斧</option>
+			<option value="11">长棍</option>
+			<option value="12">狼牙棒</option>
+			<option value="13">三节棍</option>
+			<option value="14">长枪</option>
+			<option value="15">战戟</option>
+			<option value="16">长鞭</option>
+			<option value="17">软鞭</option>
+			<option value="18">九节鞭</option>
+			<option value="19">杆子鞭</option>
+			<option value="20">链枷</option>
+			<option value="21">双环</option>
+			<option value="22">对剑</option>
+			<option value="23">双钩</option>
+		</select>
+
+
+		<div class="hiddenBox">
+			<div>
+				<img src="icon.png" alt="" />
+			</div>
+		</div>
+
+		<label>
+			基础伤害: <input type="number" step="1"  min="0" id='data1' value="20" disabled>
+		</label>
+		<label>
+			硬度: <input type="number" step="1"  min="0" id='data2' value="33" disabled>
+		</label>
+		<label>
+			韧度: <input type="number" step="1"  min="0" id='data3' value="62" disabled>
+		</label>
+		<label>
+			重量: <input type="number" step="1"  min="0" id='data4' value="12" disabled>
+		</label>
+		<label>
+			古木(上限5): <input type="number" step="1"  min="0" max="5" id='data5' value="5">
+		</label>
+		<label>
+			云香(上限4): <input type="number" step="1"  min="0" max="4" id='data6' value="4">
+		</label>
+		<label>
+			无烟(上限11): <input type="number" step="1"  min="0" max="11" id='data7' value="11">
+		</label>
+		<label>
+			融铁(上限49): <input type="number" step="1"  min="0" max='60' id='data8' value="0">
+		</label>
+		<label>
+			遁地符(上限10): <input type="number" step="1"  min="0" max='10' id='data9' value="10">
+		</label>
+		<label>
+			锻造等级：<input type="number" id='grade' value='400' max="1000" min="0">
+		</label>
+
+		<div>
+			<a href="javascript:;" id='btn' class="btn">锻造</a>
+		</div>
+
+		<div id="result" class="result"></div>
+		<div class="imgBox" id="imgBox">
+			<img src="duanda.png" alt="">
+		</div>
+	</div>
+
+	<div class="mainBox2">
+		<label>
+			当前伤害(最高461)<input type="number" id="data00" step="1" disabled value="0">
+			<span></span>
+		</label>
+		<label>
+			当前重量<input type="number" id="data01" step="1" disabled value="0">
+		</label>
+		<label>
+			当前硬度<input type="number" id="data02" step="1" disabled value="0">
+		</label>
+		<label>
+			当前韧度<input type="number" id="data03" step="1" disabled value="0">
+		</label>
+		<label>
+			淬炼次数(上限300)<input type="number" id="data04" step="1" min="0" value="0" disabled>
+		</label>
+		<label>
+			硬度增幅<input type="range" id="data05" max="15" min="1" value="1" step="1">
+			<span id="show1">1</span>
+		</label>
+		<label>
+			韧度增幅<input type="range" id="data06" max="15" min="1" value="1" step="1">
+			<span id="show2">1</span>
+		</label>
+
+		<div class="cuiBtn">
+			<a href="javascript:;" id="btn2">锁定</a>
+		</div>
+
+
+		<div class="materialContainer">
+			<div class="materialBox">
+				<a href="javascript:;" id="material1">loading</a>
+			</div>
+			<div class="materialBox">
+				<a href="javascript:;" id="material2">loading</a>
+			</div>
+			<div class="materialBox">
+				<a href="javascript:;" id="material3">loading</a>
+			</div>
+		</div>
+
+<!--		重铸-->
+		<div class="recastContainer">
+			<a href="javascript:;" id="btn4">重铸</a>
+		</div>
+		<div class="recastBox">
+			<a href="javascript:;" >长刀</a>
+			<a href="javascript:;" >长刀</a>
+			<a href="javascript:;" >长刀</a>
+			<a href="javascript:;" >长刀</a>
+		</div>
+
+		<div class="multipleContainer">
+			<input type="number" value="1" id="input3" disabled>
+			<a href="javascript:;" id="btn3">锁定解除</a>
+
+		</div>
+
+		<audio  preload="none" loop id="myMusic">
+			<source src="qxpsz.mp3"/>
+			抱歉，你的浏览器暂不支持此音频格式
+		</audio>
+		<a href="javascript:;" class="playBtn"></a>
+
+
+		<a href="javascript:;" class="dataBtn">数值</a>
+		<a href="javascript:;" class="backBtn">回退</a>
+        <a href="javascript:;" class="resetBtn">重置</a>
+
+
+
+		<div id="printBox" class="printBox"></div>
+
+
+
+	</div>
+
+	<script src="js/computed.js"></script>
+</body>
+</html>
