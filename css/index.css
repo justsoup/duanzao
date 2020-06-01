@@ -1,1 +1,370 @@
-html{font-size:100px;}html,body{overflow:hidden;height:100%;width:100%;}.mainBox1,.mainBox2{display:none;background:url('../backtop.png') no-repeat;background-size:100% 100%;position:relative;max-width:640px;color:#999999;height:100%;border:1px solid black;margin:0 auto;}select{display:block;width:2rem;height:.4rem;margin:0 auto .15rem auto;}.hiddenBox{display:none;cursor:pointer;position:absolute;top:1.2rem;right:.8rem;width:.6rem;height:.6rem;border-radius:.3rem;}.hiddenBox div img{display:block;width:100%;height:100%;border-radius:.3rem;-webkit-transition:all 0.8s ease-in-out 0s;transition:all 0.8s ease-in-out 0s;animation:imgRotate 3s infinite;animation-iteration-count:1;}@keyframes imgRotate{from{-webkit-transform:rotate(0deg) scale(1);transform:rotate(0deg) scale(.1);}to{-webkit-transform:rotate(360deg) scale(1.5);transform:rotate(360deg) scale(1.5);}}label{position:relative;display:block;width:3rem;height:.4rem;margin:.05rem auto 0 auto;font-weight:bold;font-size:.15rem;}input{position:absolute;width:.6rem;right:0;padding:.05rem;text-align:center;}.mainBox1 label:nth-of-type(1){color:#e01d20;}.mainBox1 label:nth-of-type(5){color:rgb(250,246,250);}.mainBox1 label:nth-of-type(6){color:rgba(255,208,0,0.87);}.mainBox1 label:nth-of-type(7){color:darkorchid;}.mainBox1 label:nth-of-type(8){color:darkmagenta;}.mainBox1 label:nth-of-type(10){color:#bed79e;}.btn{display:block;width:.8rem;margin:0 auto;font-size:.4rem;color:rgba(255,187,0,0.89);}.btn:hover{color:#ff5500;}.result{display:block;text-align:center;font-size:.3rem;color:#008cff;}.imgBox{display:none;position:absolute;top:1rem;width:100%;height:5rem;background:black;}.imgBox img{opacity:0.7;display:block;width:100%;height:100%;}.mainBox2 label{width:3rem;}.mainBox2 label:nth-of-type(6) input,.mainBox2 label:nth-of-type(7) input{width:1.2rem;}.mainBox2 label:nth-of-type(1){color:rgba(186,37,132,0.95);}.mainBox2 label:nth-of-type(2){color:rgba(158,160,173);}.mainBox2 label:nth-of-type(3){color:rgb(20,3,247);}.mainBox2 label:nth-of-type(4){color:rgb(255,0,0);}.mainBox2 label:nth-of-type(5){color:rgba(48,96,102,0.94);}.cuiBtn{background:#634b4b;width:.8rem;height:.4rem;margin:0 auto;border-radius:.2rem;}.cuiBtn a{color:#6262d3;display:block;width:.4rem;font-size:.2rem;margin:0 auto;line-height:.4rem;}.cuiBtn a:active{color:rgba(33,33,75,0.88);}.materialContainer{width:5rem;height:.4rem;border-radius:.2rem;margin:.5rem auto 0 auto;}.materialBox{background:#634b4b;width:1.2rem;height:.4rem;border-radius:.2rem;float:left;margin-left:.38rem;cursor:pointer;}.materialBox a{color:#6262d3;display:block;width:.6rem;font-size:.2rem;margin:0 auto;line-height:.4rem;text-align:center;}.multipleContainer{position:relative;width:2rem;height:.8rem;border-radius:.2rem;margin:.2rem auto 0 auto;}.multipleContainer input{width:.6rem;left:.2rem;top:.2rem;height:.4rem;font-size:.2rem;border-radius:.1rem;box-sizing:border-box;border:none;background:#FFF;}.multipleContainer a{background:#000;position:absolute;display:block;width:.8rem;font-size:.2rem;line-height:.4rem;color:green;top:.18rem;right:.2rem;border:1px solid black;border-radius:.1rem;}.recastContainer{background:#7e4747;width:1rem;height:.4rem;border-radius:.2rem;margin:.2rem auto 0 auto;cursor:pointer;}.recastContainer a{color:rgba(0,0,0,0.67);display:block;width:.4rem;font-size:.2rem;margin:0 auto;line-height:.4rem;}.recastBox{display:none;width:3.2rem;height:.4rem;background:red;margin:0 auto;}.recastBox a{box-sizing:border-box;text-align:center;border:.02rem solid chocolate;display:block;color:#eee;cursor:pointer;width:.8rem;height:.4rem;float:left;}.playBtn{position:absolute;width:.6rem;height:.6rem;top:.2rem;right:.4rem;margin-top:.3rem;background:url('../music.svg') no-repeat;background-size:100% 100%;}.active{animation:iconRotate 1s linear infinite both;}.backBtn,.dataBtn{position:absolute;width:.68rem;height:.6rem;left:.4rem;margin-top:.3rem;background:url('../icon.png') no-repeat;background-size:100% 100%;cursor:pointer;text-align:center;line-height:.6rem;color:#9a9a7f;}.backBtn{top:1.2rem;}.dataBtn{top:.2rem;}@keyframes iconRotate{form{transform:rotate(0deg);}to{transform:rotate(360deg);}}.printBox{overflow:auto;border:1px solid rgba(255,64,0,0.81);font-size:.2rem;text-align:center;height:3rem;color:#f0f4fa;}
+html{
+    font-size: 100px;
+}
+
+html,body{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+
+.mainBox1,.mainBox2{
+    display: none;
+    background: url('../backtop.png') no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    max-width: 640px;
+    color:#999999;
+    height: 100%;
+    border:1px solid black;
+    margin: 0 auto;
+}
+
+
+select{
+
+    display: block;
+    width: 2rem;
+    height: .4rem;
+    margin: 0 auto .15rem auto;
+}
+
+.hiddenBox{
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top:1.2rem;
+    right:.8rem;
+    width: .6rem;
+    height: .6rem;
+    border-radius: .3rem;
+
+}
+
+.hiddenBox div img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: .3rem;
+    -webkit-transition: all 0.8s ease-in-out 0s;
+    transition: all 0.8s ease-in-out 0s;
+    animation: imgRotate 3s infinite;
+    animation-iteration-count:1;
+}
+
+
+@keyframes imgRotate{
+    from{
+        -webkit-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(.1);
+    }
+    to{
+        -webkit-transform: rotate(360deg) scale(1.5);
+        transform: rotate(360deg) scale(1.5);
+    }
+}
+
+
+
+label{
+    position: relative;
+    display: block;
+    width: 3rem;
+    height: .4rem;
+    margin: .05rem auto 0 auto;
+    font-weight: bold;
+    font-size: .15rem;
+}
+
+
+input{
+    position: absolute;
+    width: .6rem;
+    right:0;
+    padding: .05rem;
+    text-align: center;
+}
+
+
+
+.mainBox1 label:nth-of-type(1){
+    color:#e01d20;
+}
+
+.mainBox1 label:nth-of-type(5){
+    color: rgb(250, 246, 250);
+}
+
+.mainBox1 label:nth-of-type(6){
+    color: rgba(255, 208, 0, 0.87);
+}
+
+.mainBox1 label:nth-of-type(7){
+    color:darkorchid;
+}
+
+.mainBox1 label:nth-of-type(8){
+    color:darkmagenta;
+}
+
+.mainBox1 label:nth-of-type(10){
+    color: #bed79e;
+}
+
+.btn{
+    display: block;
+    width: .8rem;
+    margin: 0 auto;
+    font-size: .4rem;
+    color: rgba(255, 187, 0, 0.89);
+}
+.btn:hover{
+    color: #ff5500;
+}
+
+
+
+.result{
+    display: block;
+    text-align: center;
+    font-size: .3rem;
+    color: #008cff;
+}
+
+.imgBox{
+    display: none;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+    height: 5rem;
+    background: black;
+}
+
+.imgBox img{
+    opacity: 0.7;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+.mainBox2 label{
+    width: 3rem;
+}
+
+.mainBox2 label:nth-of-type(6) input,.mainBox2 label:nth-of-type(7) input{
+    width: 1.2rem;
+
+}
+
+
+.mainBox2 label:nth-of-type(1){
+    color: rgba(186, 37, 132, 0.95);
+}
+.mainBox2 label:nth-of-type(2){
+    color: rgba(158, 160, 173);
+}
+.mainBox2 label:nth-of-type(3){
+    color: rgb(20, 3, 247);
+}
+.mainBox2 label:nth-of-type(4){
+    color: rgb(255, 0, 0);
+}
+.mainBox2 label:nth-of-type(5){
+    color: rgba(48, 96, 102, 0.94);
+}
+
+
+.cuiBtn{
+    background: #634b4b;
+    width: .8rem;
+    height: .4rem;
+    margin: 0 auto;
+    border-radius: .2rem;
+
+}
+
+.cuiBtn a{
+    color: #6262d3;
+    display: block;
+    width: .4rem;
+    font-size: .2rem;
+    margin: 0 auto;
+    line-height: .4rem;
+}
+
+.cuiBtn a:active{
+    color: rgba(33, 33, 75, 0.88);
+}
+
+.materialContainer{
+    /*background: yellow;*/
+    width: 5rem;
+    height: .4rem;
+    border-radius: .2rem;
+    margin: .5rem auto 0 auto;
+}
+
+.materialBox{
+    background: #634b4b;
+    width: 1.2rem;
+    height: .4rem;
+    border-radius: .2rem;
+    float:left;
+    margin-left: .38rem;
+    cursor: pointer;
+}
+
+.materialBox a{
+    color: #6262d3;
+    display: block;
+    width: .6rem;
+    font-size: .2rem;
+    margin: 0 auto;
+    line-height: .4rem;
+    text-align: center;
+}
+
+.multipleContainer{
+    position: relative;
+    /*background: red;*/
+    width: 2rem;
+    height: .8rem;
+    border-radius: .2rem;
+    margin: .2rem auto 0 auto;
+}
+
+.multipleContainer input{
+    width: .6rem;
+    left:.2rem;
+    top:.2rem;
+    height: .4rem;
+    font-size: .2rem;
+    border-radius: .1rem;
+    box-sizing: border-box;
+    border: none;
+    background: #FFF;
+}
+
+.multipleContainer a{
+    background: #000;
+    position: absolute;
+    display: block;
+    width: .8rem;
+    font-size: .2rem;
+    line-height: .4rem;
+    color:green;
+    top:.18rem;
+    right:.2rem;
+    border:1px solid black;
+    border-radius: .1rem;
+}
+
+.recastContainer{
+
+    background: #7e4747;
+    width: 1rem;
+    height: .4rem;
+    border-radius: .2rem;
+    margin: .2rem auto 0 auto;
+    cursor: pointer;
+}
+
+
+.recastContainer a{
+    color: rgba(0, 0, 0, 0.67);
+    display: block;
+    width: .4rem;
+    font-size: .2rem;
+    margin: 0 auto;
+    line-height: .4rem;
+}
+
+/*重铸菜单*/
+.recastBox{
+    display: none;
+    width: 3.2rem;
+    height: .4rem;
+    background: red;
+    margin: 0 auto;
+}
+
+.recastBox a{
+    box-sizing: border-box;
+    text-align: center;
+    border: .02rem solid chocolate ;
+    display: block;
+    color:#eee;
+    cursor: pointer;
+    width: .8rem;
+    height: .4rem;
+    float:left;
+}
+
+
+
+.playBtn{
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    top: .2rem;
+    right: .4rem;
+    margin-top:.3rem;
+    background: url('../music.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.active{
+    animation: iconRotate 1s linear infinite both;
+}
+
+
+.dataBtn,.resetBtn,.backBtn{
+    position: absolute;
+    width: .68rem;
+    height: .6rem;
+    left: .4rem;
+    margin-top:.3rem;
+    background: url('../icon.png') no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+    text-align: center;
+    line-height: .6rem;
+    color: #40403e;
+}
+
+.dataBtn{
+    top: .2rem;
+}
+
+.resetBtn{
+    top:1.2rem;
+}
+
+.backBtn{
+    top: 2.2rem;
+}
+
+
+
+@keyframes iconRotate {
+    form{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.printBox{
+    overflow: auto;
+    border:1px solid rgba(255, 64, 0, 0.81);
+    font-size: .2rem;
+    text-align: center;
+    height: 3rem;
+    color: #f0f4fa;
+}
